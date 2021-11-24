@@ -20,7 +20,7 @@ SUBLIST3R_SCRIPT_PATH="./sublist3r.sh"
 
 if [ ! -f $SUBLIST3R_SCRIPT_PATH ]; then
 	echo "Please update the SUBLIST3R_SCRIPT_PATH variable in $FILENAME to match the path containing your sublist3r.sh"
-	return
+	exit
 fi
 
 if [ -d $DOMAINS_FOLDER ]; then
@@ -30,4 +30,5 @@ if [ -d $DOMAINS_FOLDER ]; then
 	done
 else
 	echo "Please update the DOMAINS_FOLDER variable in $FILENAME to match the path containing your domain files"
+	exit
 fi
