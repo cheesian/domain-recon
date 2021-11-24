@@ -25,21 +25,22 @@ DNS=8.8.8.8
 
 if [ ! -f $SUBLIST3R_PATH ]; then
 	echo "Please update the SUBLIST3R_PATH variable in $FILENAME to match the path to your sublist3r.py"
-	return
+	exit
 fi
 
 if [ ! command -v amass ]; then
 	echo "Please install Amass first"
-	return
+	exit
 fi
 
 if [ ! -f $KNOCK_PATH ]; then
 	echo "Please update the KNOCK_PATH variable in $FILENAME to match the path to your knockpy.py"
-	return
+	exit
 fi
 
 if [ -z "$1" ] || [ ! -f $1 ]; then
 	echo "Please supply the name of the file containing your domains"
+	exit
 else
 	for domain in $(cat $1)
 	do
