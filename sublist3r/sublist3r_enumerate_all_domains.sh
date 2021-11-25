@@ -14,7 +14,7 @@ SUBLIST3R_SCRIPT_PATH => This should point to the sublist3r.sh file
 ./sublist3r_enumerate_all_domains.sh
 '
 
-FILENAME="sublist3r_enumerate_all_domains.sh"
+FILENAME=`basename "$0"`
 DOMAINS_FOLDER="./domains"
 SUBLIST3R_SCRIPT_PATH="./sublist3r.sh"
 

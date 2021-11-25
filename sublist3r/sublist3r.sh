@@ -17,7 +17,7 @@ SLEEP_DURATION => [OPTIONAL] This is the time interval between enumeration of th
 
 '
 
-FILENAME="sublist3r.sh"
+FILENAME=`basename "$0"`
 SUBLIST3R_PATH="$HOME/Documents/CcHub/recon/Sublist3r/sublist3r.py"
 SLEEP_DURATION=30
 

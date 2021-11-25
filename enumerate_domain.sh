@@ -1,7 +1,7 @@
 #!/bin/bash
 : '
 [ABOUT]
-This script requires that you have amass, sublist3r, and knockpy installed. You can git clone them using the following urls
+This script requires that you have amass, sublist3r, and knockpy installed to enumerate a domain using all 3 tools. You can git clone them using the following urls
 https://github.com/OWASP/Amass.git
 https://github.com/aboul3la/Sublist3r.git
 https://github.com/guelfoweb/knock.git
@@ -17,7 +17,7 @@ DNS => [OPTIONAL] This is the dns server you want to use
 ./enumerate_domain.sh domains/chime.domains
 '
 
-FILENAME="enumerate_domain.sh"
+FILENAME=`basename "$0"`
 SUBLIST3R_PATH="$HOME/Documents/CcHub/recon/Sublist3r/sublist3r.py"
 KNOCK_PATH="$HOME/Documents/CcHub/recon/knock/knockpy.py"
 SLEEP_DURATION=30
@@ -28,7 +28,7 @@ if [ ! -f $SUBLIST3R_PATH ]; then
 	exit
 fi
 
-if [ ! command -v amass ]; then
+if ! command -v amass > /dev/null ; then
 	echo "Please install Amass first"
 	exit
 fi
